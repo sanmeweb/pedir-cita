@@ -13,3 +13,22 @@ table{
 	color:#fff;
 	background-color: #444;
 }
+
+.pasado, .festivo{
+	background-color: #ddd;
+	opacity: 0.4;
+}
+
+.festivo{
+	color:#f00;
+}
+
+.presente{
+	background-color: #f0f8ff;
+	font-weight: bold;
+	border:1px solid #000;
+}
+
+.futuro{
+	background-color: #f0f8ff;
+}

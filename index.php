@@ -76,7 +76,41 @@ for($dia = 1; $dia <= date('t', $fecha); $dia++){
 	}
 
 	//creamos la celda del dia
-	echo '<td>'.$dia.'</td>';
+	echo '<td ';
+
+	//calcula si un día es pasado, presente o futuro
+	if( (date('d',$dia_completo) < date('d')) && (date('m',$dia_completo) <= date('m')) && (date('Y', $dia_completo) <= date('Y')) ){
+		//añadimos la clase css
+		echo 'class="pasado';
+
+		//comprueba si una fecha es festiva en España
+		if(es_festivo($dia_completo)){
+			echo ' festivo';
+		}
+
+		//mostramos el dia
+		echo '">'.$dia.'</td>';
+	}elseif( (date('d',$dia_completo) == date('d')) && (date('m',$dia_completo) == date('m')) && (date('Y',$dia_completo) == date('Y')) ){
+		//clase css presente
+		echo 'class="presente';
+
+		//comprueba si una fecha es festiva en España
+		if(es_festivo($dia_completo)){
+			echo ' festivo';
+		}
+
+		echo '">'.$dia.'</td>';
+	}else{
+		//el día es futuro
+		echo 'class = "futuro';
+
+		//comprueba si una fecha es festiva en España
+		if(es_festivo($dia_completo)){
+			echo ' festivo';
+		}
+
+		echo '">'.$dia.'</td>';
+	}
 
 	//comprobamos si el día es el último del mes
 	//si es así, cerramos la fila actual y la tabla

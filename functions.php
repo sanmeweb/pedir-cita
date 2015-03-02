@@ -102,5 +102,41 @@ function mes_espanol($mes){
 			return 'Diciembre';
 			break;
 	}
+}
 
+/*
+	comprueba si una fecha es festivo en España
+	devuelve true si la fecha es festiva, false en caso contrario
+*/
+function es_festivo($fecha){
+	if((date('N',$fecha) == 6) || (date('N',$fecha) == 7)){
+		//sábado o domingo
+		return true;
+	}elseif((date('d',$fecha) == 1) && (date('m',$fecha) == 1)){
+		//1 de enero
+		return true;
+	}elseif((date('d',$fecha) == 6) && (date('m',$fecha) == 1)){
+		//6 de enero
+		return true;
+	}elseif((date('d',$fecha) == 1) && (date('m',$fecha) == 5)){
+		//1 de mayo
+		return true;
+	}elseif((date('d',$fecha) == 15) && (date('m',$fecha) == 8)){
+		//15 de agosto
+		return true;
+	}elseif((date('d',$fecha) == 12) && (date('m',$fecha) == 10)){
+		//12 de octubre
+		return true;
+	}elseif((date('d',$fecha) == 6) && (date('m',$fecha) == 12)){
+		//6 de diciembre
+		return true;
+	}elseif((date('d',$fecha) == 8) && (date('m',$fecha) == 12)){
+		//8 de diciembre
+		return true;
+	}elseif((date('d',$fecha) == 25) && (date('m',$fecha) == 12)){
+		//25 de diciembre
+		return true;
+	}else{
+		return false;
+	}
 }
