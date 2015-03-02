@@ -5,6 +5,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Pedir cita</title>
+	<link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
 
@@ -45,10 +46,10 @@ if( (date('m', $fecha) == date('m')) && (date('Y', $fecha) == date('Y')) ){
 }
 
 //mostramos el nombre del mes, el enlace al mes siguiente y los nombres de los días.
-echo '<td colspan="5">'.mes_espanol(date('m',$fecha)).' '.date('Y',$fecha).'</td>
+echo '<td colspan="5" class="mes_header">'.mes_espanol(date('m',$fecha)).' '.date('Y',$fecha).'</td>
 	<td><a href="index.php?f='.mes_mas($fecha).'">></td>
 	</tr>
-	<tr>
+	<tr class="dia_header">
 		<th>Lunes</th>
 		<th>Martes</th>
 		<th>Miércoles</th>

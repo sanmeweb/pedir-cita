@@ -1,0 +1,15 @@
+table{
+	text-align: center;
+	border:1px solid black;
+	margin:0 auto;
+	font-family:Arial, sans-serif;
+}
+
+.mes_header{
+	text-transform: uppercase;
+}
+
+.dia_header{
+	color:#fff;
+	background-color: #444;
+}
